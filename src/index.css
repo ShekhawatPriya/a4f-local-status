@@ -164,3 +164,32 @@
 .fade-in-delay-300 {
   animation: fadeIn 0.5s ease-out 0.3s both;
 }
+
+/* New animations and transitions */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.scale-on-hover {
+  transition: transform 0.2s;
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.05);
+}
+
+.glassmorphism {
+  @apply backdrop-blur-sm bg-background/70 border border-border shadow-sm;
+}
