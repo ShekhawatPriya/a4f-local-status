@@ -19,19 +19,19 @@ const ProviderCard = ({ name, routes, className = "" }: ProviderCardProps) => {
   
   return (
     <div className={cn(
-      "bg-card rounded-xl shadow-sm border border-border overflow-hidden transition-colors duration-300",
+      "bg-card rounded-xl shadow-sm border border-border overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-1", // Added hover effects
       className
     )}>
       <div className="px-6 py-5 border-b border-border">
-        <div className="flex justify-between items-center">
-          <h3 className="font-semibold text-lg text-card-foreground">{name}</h3>
-          <div className="text-xs font-medium px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground">
+        <div className="flex justify-between items-center gap-4"> {/* Added gap */}
+          <h3 className="font-semibold text-lg text-card-foreground flex-shrink-0">{name}</h3> {/* Prevent shrinking */}
+          <div className="text-xs font-medium px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground whitespace-nowrap"> {/* Prevent wrapping */}
             {workingRoutesCount}/{routes.length} operational
           </div>
         </div>
       </div>
       
-      <div className="px-6">
+      <div className="p-6 space-y-4"> {/* Added padding and vertical space */}
         {routes.map((route) => (
           <RouteStatus
             key={route.name}
